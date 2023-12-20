@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BookDetail } from './book-detail.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app-google-book';
+  results!: BookDetail[];
+  loading!: boolean;
+  message = '';
+
+  updateResults(results: BookDetail[]): void {
+    this.results = results;
+    if (this.results.length === 0) {
+      this.message = 'Notfound...';
+    } else {
+      this.message = 'Top 10results:';
+    }
+  }
+  
 }

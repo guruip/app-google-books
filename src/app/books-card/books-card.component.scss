@@ -1,0 +1,48 @@
+.flex{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    width: 100%;
+}
+
+.mat-button {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: 3;
+}
+
+.book {
+    display: inline-block;
+    width: 220px;
+    height: 260px;
+    margin: 10px;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.bookImage {
+    width: 220px;
+    height: 220px;
+    border: 4px solid #000;
+    border-radius: 4px;
+    object-fit: cover;
+    position: absolute;
+}
+
+.titleText{
+    background-color: #000;
+    color: #fff;
+    opacity: 0.75;
+    width: 214px;
+    margin-left: 3px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+}
