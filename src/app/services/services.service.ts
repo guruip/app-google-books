@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { BookDetail } from '../book-detail.model';
 
+
 @Injectable({
   providedIn: 'root'
 })

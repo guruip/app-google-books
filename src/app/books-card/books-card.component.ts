@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BookDetail } from '../book-detail.model';
 
 @Component({
@@ -6,10 +6,10 @@ import { BookDetail } from '../book-detail.model';
   templateUrl: './books-card.component.html',
   styleUrls: ['./books-card.component.scss']
 })
-export class BooksCardComponent implements OnInit {
-[x: string]: any;
+export class BooksCardComponent {
+  
   @Input()
-  result!: BookDetail;
+  results!: BookDetail[];
 
   constructor() {}
 

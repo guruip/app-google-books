@@ -1,0 +1,21 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "title": "Ilon Mask",
+        "imageLinks": "assets/images/Apple_Mac.png",
+        "infoLink": "",
+        "isFavorite": ""
+      },
+      {
+        "id": 1,
+        "title": "Ilon Mask",
+        "imageLinks": "assets/images/Apple_Mac.png",
+        "infoLink": "",
+        "isFavorite": ""
+      }
+    ],
+    "basket": [
+      {}
+    ]
+}

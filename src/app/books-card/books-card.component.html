@@ -1,31 +1,16 @@
+<mat-grid-list cols="8" rowHeight="400">
+  <mat-grid-tile *ngFor="let result of results">
 
-<!-- 
-
-<mat-grid-list cols="10" rowHeight="500" >
-  <mat-grid-tile *ngFor="let result of results" [result]="result">
-   <a href="{{ result.infoLink }}">
       <mat-card class="example-card">
+        <a href="{{ result.infoLink }}">
         <mat-card-header>
-          <mat-card-title class="titleText">{{ result.title }}</mat-card-title>
+          <mat-card-title class="titleText">{{ result.title | slice:0:10 }}</mat-card-title>
         </mat-card-header>
-        <img mat-card-image class="bookImage" src="{{ result.imageLinks }}">
+        <img mat-card-image class="bookImage" src="{{ result.imageLinks }}"></a>
         <mat-card-actions>
-          <button mat-button>LIKE</button>
+          <mat-icon>favorite</mat-icon>
         </mat-card-actions>
       </mat-card>
-    </a>
-
+    
   </mat-grid-tile>
-</mat-grid-list> -->
-
-<div class="flex">
-  
-    <a href="{{ result.infoLink }}" class="btn btn-default book" rool="button" target="_blank">
-      <img class="bookImage" src="{{ result.imageLinks }}">
-      <div class="titleTexr">{{ result.title }}</div>
-      <button class="mat-button" mat-button>LIKE</button>
-    </a>
-</div>
-
-
-
+</mat-grid-list>

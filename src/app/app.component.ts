@@ -7,9 +7,10 @@ import { BookDetail } from './book-detail.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  results!: BookDetail[];
-  loading!: boolean;
-  message = '';
+  public results!: BookDetail[];
+  public loading!: boolean;
+  public message = '';
+
 
   updateResults(results: BookDetail[]): void {
     this.results = results;

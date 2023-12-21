@@ -1,4 +1,5 @@
+<routing-outlet></routing-outlet>
 <app-header></app-header>
 <app-search-box (loading)="loading = $event" (results)="updateResults($event)"></app-search-box>
-    <app-books-card *ngFor="let result of results" [result]="result"></app-books-card>
+<app-books-card [results]="results"></app-books-card>
     
