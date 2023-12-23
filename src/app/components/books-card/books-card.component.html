@@ -2,13 +2,15 @@
   <mat-grid-tile *ngFor="let result of results">
 
       <mat-card class="example-card">
-        <a href="{{ result.infoLink }}">
+        <a href="{{ result.detailsUrl }}">
         <mat-card-header>
           <mat-card-title class="titleText">{{ result.title | slice:0:10 }}</mat-card-title>
         </mat-card-header>
-        <img mat-card-image class="bookImage" src="{{ result.imageLinks }}"></a>
+          <img mat-card-image class="bookImage" src="{{ result.imageUrl }}"></a>
         <mat-card-actions>
-          <mat-icon>favorite</mat-icon>
+          <button mat-icon-button  (click)="addFavorite(result)">
+            <mat-icon>favorite</mat-icon>
+          </button>
         </mat-card-actions>
       </mat-card>
     

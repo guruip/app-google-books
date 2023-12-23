@@ -1,7 +1,7 @@
 import { Component, ElementRef, EventEmitter, Output } from '@angular/core';
-import { ServicesService } from '../services/services.service';
+import { BooksService } from '../../services/books.service';
 import { debounceTime, filter, fromEvent, map, switchAll, tap } from 'rxjs';
-import { BookDetail } from '../book-detail.model';
+import { BookDetail } from '../../book-detail.model';
 
 @Component({
   selector: 'app-search-box',
@@ -12,7 +12,7 @@ export class SearchBoxComponent {
   @Output() loading = new EventEmitter<boolean>();
   @Output() results = new EventEmitter<BookDetail[]>();
 
-  constructor(private book: ServicesService, private el: ElementRef) {}
+  constructor(private book: BooksService, private el: ElementRef) {}
 
 
   ngOnInit(): void {

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { BookDetail } from '../book-detail.model';
+import { BookDetail } from '../../book-detail.model';
+import { BooksService } from 'src/app/services/books.service';
 
 @Component({
   selector: 'app-books-card',
@@ -11,7 +12,11 @@ export class BooksCardComponent {
   @Input()
   results!: BookDetail[];
 
-  constructor() {}
+  constructor(private bookService: BooksService) {}
+
+  addFavorite(result: BookDetail): void {
+    this.bookService.saveFavorite(result);
+  };
 
   ngOnInit(): void {
    
