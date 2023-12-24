@@ -8,7 +8,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { SharedModule } from './shared/shared.module';
 import { BooksCardComponent } from './components/books-card/books-card.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
-import { FavoriteBooksComponent } from './components/favorite-books/favorite-books.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,6 @@ import { FavoriteBooksComponent } from './components/favorite-books/favorite-boo
     HeaderComponent,
     BooksCardComponent,
     SearchBoxComponent,
-    FavoriteBooksComponent,
   ],
   imports: [
     BrowserModule,

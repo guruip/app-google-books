@@ -29,16 +29,17 @@ export class BooksService {
   }
 
   public getFavorites(): BookDetail[] {
-    const booksJson = localStorage.getItem(this.BOOKS_LOCALSTORAGE_KEY) ?? '';
-    const books: any[] = JSON.parse(booksJson) || [];
+    const booksJson = localStorage.getItem(this.BOOKS_LOCALSTORAGE_KEY) ?? '[]';
+    const books: any[] = JSON.parse(booksJson);
 
     return books.map((item) => new BookDetail(item));
   };
-
+  
   public saveFavorite(book: BookDetail): void {
     const books = this.getFavorites();
     books.push(book);
     const booksJson = JSON.stringify(books);
+    // console.log(booksJson);
     localStorage.setItem(this.BOOKS_LOCALSTORAGE_KEY, booksJson);
   };
 

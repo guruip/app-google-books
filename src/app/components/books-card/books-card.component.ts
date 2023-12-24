@@ -19,6 +19,5 @@ export class BooksCardComponent {
   };
 
   ngOnInit(): void {
-   
   }
 }

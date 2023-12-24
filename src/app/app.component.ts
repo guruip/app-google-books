@@ -6,6 +6,7 @@ import { BookDetail } from './book-detail.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
   public results!: BookDetail[];
   public loading!: boolean;
@@ -20,5 +21,5 @@ export class AppComponent {
       this.message = 'Top 10results:';
     }
   }
-  
+ 
 }

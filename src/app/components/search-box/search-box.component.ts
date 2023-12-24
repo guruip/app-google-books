@@ -14,7 +14,7 @@ export class SearchBoxComponent {
 
   constructor(private book: BooksService, private el: ElementRef) {}
 
-
+  
   ngOnInit(): void {
     fromEvent(this.el.nativeElement, 'keyup').pipe(
       map((e: any) => e.target.value),
