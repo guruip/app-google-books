@@ -8,8 +8,9 @@ import { BooksService } from 'src/app/services/books.service';
 })
 export class HeaderComponent { 
 
-  constructor(private bookService: BooksService) {}
+  constructor(private booksService: BooksService) {}
 
   addFavorites() {
+    this.booksService.addFavoriteBooks();
   }
 }

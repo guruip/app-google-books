@@ -8,14 +8,15 @@ import { BooksService } from 'src/app/services/books.service';
   styleUrls: ['./books-card.component.scss']
 })
 export class BooksCardComponent {
-  
-  @Input()
-  results!: BookDetail[];
 
-  constructor(private bookService: BooksService) {}
+  get books$() {
+    return this.booksService.booksSource;
+  }
 
-  addFavorite(result: BookDetail): void {
-    this.bookService.saveFavorite(result);
+  constructor(private booksService: BooksService) {}
+
+  addFavorite(book: BookDetail): void {
+    this.booksService.saveFavorite(book);
   };
 
   ngOnInit(): void {

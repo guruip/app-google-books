@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 import { BookDetail } from '../book-detail.model';
 import { BooksApiResponse, BooksApiResponseItem } from '../books.types';
 
@@ -10,6 +10,16 @@ import { BooksApiResponse, BooksApiResponseItem } from '../books.types';
 })
 export class BooksService {
 
+  get booksSource(): Observable<BookDetail[]> {
+    return this.booksSource$.asObservable();
+  }
+
+  set booksSource(value: BookDetail[]) {
+    this.booksSource$.next(value);
+  }
+
+  private readonly booksSource$ = new BehaviorSubject<BookDetail[]>([]);
+  
   private readonly BOOKS_API_URL: string = 'https://www.googleapis.com/books/v1/volumes';
 
   private readonly BOOKS_LOCALSTORAGE_KEY = 'favoriteBooks';
@@ -42,5 +52,9 @@ export class BooksService {
     // console.log(booksJson);
     localStorage.setItem(this.BOOKS_LOCALSTORAGE_KEY, booksJson);
   };
+
+  public addFavoriteBooks() {
+    this.booksSource = this.getFavorites();
+  }  
 
 }

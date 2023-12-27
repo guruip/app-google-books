@@ -1,14 +1,14 @@
 <mat-grid-list cols="8" rowHeight="400">
-  <mat-grid-tile *ngFor="let result of results">
+  <mat-grid-tile *ngFor="let book of books$ | async">
 
       <mat-card class="example-card">
-        <a href="{{ result.detailsUrl }}">
+        <a href="{{ book.detailsUrl }}">
         <mat-card-header>
-          <mat-card-title class="titleText">{{ result.title | slice:0:10 }}</mat-card-title>
+          <mat-card-title class="titleText">{{ book.title | slice:0:10 }}</mat-card-title>
         </mat-card-header>
-          <img mat-card-image class="bookImage" src="{{ result.imageUrl }}"></a>
+          <img mat-card-image class="bookImage" src="{{ book.imageUrl }}"></a>
         <mat-card-actions>
-          <button mat-icon-button  (click)="addFavorite(result)">
+          <button mat-icon-button  (click)="addFavorite(book)">
             <mat-icon>favorite</mat-icon>
           </button>
         </mat-card-actions>

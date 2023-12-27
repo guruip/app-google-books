@@ -10,9 +10,8 @@ import { BookDetail } from '../../book-detail.model';
 })
 export class SearchBoxComponent {
   @Output() loading = new EventEmitter<boolean>();
-  @Output() results = new EventEmitter<BookDetail[]>();
 
-  constructor(private book: BooksService, private el: ElementRef) {}
+  constructor(private booksService: BooksService, private el: ElementRef) {}
 
   
   ngOnInit(): void {
@@ -21,12 +20,12 @@ export class SearchBoxComponent {
       filter(text => text.length > 1),
       debounceTime(500),
       tap(() => this.loading.emit(true)),
-      map((query: string) => this.book.search(query)),
+      map((query: string) => this.booksService.search(query)),
       switchAll()
     ).subscribe(
-      _results => {
+      books => {
         this.loading.emit(false);
-        this.results.emit(_results);
+        this.booksService.booksSource = books;
       },
       err => {
         console.log(err);
