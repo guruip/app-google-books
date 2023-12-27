@@ -47,13 +47,35 @@ export class BooksService {
   
   public saveFavorite(book: BookDetail): void {
     const books = this.getFavorites();
+
+    // for(let i = 0; books.length > i; i++) {
+    //   if(books[i].id !== book.id) {
+    //     books.push(book);
+    //   }
+    
+    // }
+
     books.push(book);
     const booksJson = JSON.stringify(books);
-    // console.log(booksJson);
+    console.log(books);
     localStorage.setItem(this.BOOKS_LOCALSTORAGE_KEY, booksJson);
   };
 
-  public addFavoriteBooks() {
+  public removeFavorite(key: BookDetail): void {
+    const books = this.getFavorites();
+
+    for (let i = 0; i < books.length; i++) {
+      let id = books[i].id;
+      if (id === key.id) {
+          books.splice(i, 1);
+      }
+    };
+
+    const booksJson = JSON.stringify(books);
+    localStorage.setItem(this.BOOKS_LOCALSTORAGE_KEY, booksJson);
+  }
+
+  public addFavoriteBooks(): void {
     this.booksSource = this.getFavorites();
   }  
 

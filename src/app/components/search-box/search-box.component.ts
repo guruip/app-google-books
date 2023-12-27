@@ -1,7 +1,6 @@
 import { Component, ElementRef, EventEmitter, Output } from '@angular/core';
 import { BooksService } from '../../services/books.service';
 import { debounceTime, filter, fromEvent, map, switchAll, tap } from 'rxjs';
-import { BookDetail } from '../../book-detail.model';
 
 @Component({
   selector: 'app-search-box',

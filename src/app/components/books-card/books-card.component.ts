@@ -19,6 +19,12 @@ export class BooksCardComponent {
     this.booksService.saveFavorite(book);
   };
 
+  removeFavorite(key: BookDetail) {
+    // console.log(key);
+    this.booksService.removeFavorite(key);
+    this.booksService.addFavoriteBooks();
+  }
+
   ngOnInit(): void {
   }
 }
