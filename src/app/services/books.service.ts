@@ -46,31 +46,26 @@ export class BooksService {
   };
   
   public saveFavorite(book: BookDetail): void {
-    const books = this.getFavorites();
-
-    // for(let i = 0; books.length > i; i++) {
-    //   if(books[i].id !== book.id) {
-    //     books.push(book);
-    //   }
     
-    // }
+    if(book.isFavorite) {
+      const books = this.getFavorites();
+      books.push(book);
 
-    books.push(book);
-    const booksJson = JSON.stringify(books);
-    console.log(books);
-    localStorage.setItem(this.BOOKS_LOCALSTORAGE_KEY, booksJson);
+      const booksJson = JSON.stringify(books);
+      console.log(book);
+      localStorage.setItem(this.BOOKS_LOCALSTORAGE_KEY, booksJson);
+    }
   };
 
-  public removeFavorite(key: BookDetail): void {
+  public removeFavorite(book: BookDetail): void {
     const books = this.getFavorites();
 
     for (let i = 0; i < books.length; i++) {
-      let id = books[i].id;
-      if (id === key.id) {
+      if (books[i].id === book.id) {
           books.splice(i, 1);
       }
     };
-
+    
     const booksJson = JSON.stringify(books);
     localStorage.setItem(this.BOOKS_LOCALSTORAGE_KEY, booksJson);
   }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { BookDetail } from '../../book-detail.model';
 import { BooksService } from 'src/app/services/books.service';
 
@@ -16,15 +16,20 @@ export class BooksCardComponent {
   constructor(private booksService: BooksService) {}
 
   addFavorite(book: BookDetail): void {
+    book.isFavorite = true;
     this.booksService.saveFavorite(book);
   };
 
-  removeFavorite(key: BookDetail) {
-    // console.log(key);
-    this.booksService.removeFavorite(key);
-    this.booksService.addFavoriteBooks();
+  removeFavorite(book: BookDetail) {
+    book.isFavorite = false;
+      this.booksService.removeFavorite(book);
+      this.booksService.addFavoriteBooks();
   }
 
   ngOnInit(): void {
+  }
+
+  ngOnDestroy(): void {
+    
   }
 }
