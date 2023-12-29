@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SharedModule } from './shared/shared.module';
 import { BooksCardComponent } from './components/books-card/books-card.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { SearchBoxComponent } from './components/search-box/search-box.component
     HeaderComponent,
     BooksCardComponent,
     SearchBoxComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
