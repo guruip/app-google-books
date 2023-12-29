@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, map } from 'rxjs';
 import { BookDetail } from '../book-detail.model';
 import { BooksApiResponse, BooksApiResponseItem } from '../books.types';
+import { mockBooks } from '../data';
 
 
 @Injectable({
@@ -18,7 +19,9 @@ export class BooksService {
     this.booksSource$.next(value);
   }
 
-  private readonly booksSource$ = new BehaviorSubject<BookDetail[]>([]);
+  private _mockBooks: BookDetail[] = mockBooks;
+
+  private readonly booksSource$ = new BehaviorSubject<BookDetail[]>(this._mockBooks);
   
   private readonly BOOKS_API_URL: string = 'https://www.googleapis.com/books/v1/volumes';
 
