@@ -1,15 +1,23 @@
-.background {
-    background-color: aliceblue;
-  }
-mat-card {
-    margin: 5px;
-  }
-
-.bookImage {
-  height: 200px;
+.container {
+  margin: 0 auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 40px 0;
 }
-.btn-vaforite {
-  // margin-right: 10px;
-  position: absolute;
-  right: 0;
+mat-card {
+  background: white;
+  color: black;
+  margin: 20px 20px;
+}
+.button {
+  margin-right: 5px;
+}
+.image {
+  height: 200px;
+  width: 150px;
+}
+.example-spacer {
+  flex: 1 1 auto;
 }

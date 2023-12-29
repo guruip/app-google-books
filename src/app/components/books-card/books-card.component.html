@@ -1,21 +1,15 @@
-<mat-grid-list cols="8" rowHeight="400">
-  <mat-grid-tile *ngFor="let book of books$ | async">
-
-      <mat-card class="example-card">
-        <a href="{{ book.detailsUrl }}">
-        <mat-card-header>
-          <mat-card-title class="titleText">{{ book.title | slice:0:10 }}</mat-card-title>
-        </mat-card-header>
-          <img mat-card-image class="bookImage" src="{{ book.imageUrl }}"></a>
+<div class="container">
+    <mat-card class="example-card" *ngFor="let book of books$ | async">
+          <mat-card-title>{{ book.title  | slice:0:10 }}</mat-card-title>
+            <a href="{{ book.detailsUrl }}">
+              <img class="image" mat-card-image src="{{book.imageUrl}}">
+            </a>
         <mat-card-actions>
-          <button mat-icon-button  (click)="addFavorite(book)" *ngIf="!book.isFavorite">
-            <mat-icon>favorite</mat-icon>
-          </button>
-          <button mat-icon-button class="btn-vaforite" (click)="removeFavorite(book)">
-            <mat-icon>delete</mat-icon>
-          </button>
-        </mat-card-actions>
-      </mat-card>
-    
-  </mat-grid-tile>
-</mat-grid-list>
+            <button class="button" mat-flat-button collor="primary" 
+                type="button" (click)="addFavorite(book)" *ngIf="!book.isFavorite"
+                  ><mat-icon>favorite</mat-icon></button>
+          <button class="button" mat-flat-button collor="primary" mat-button (click)="removeFavorite(book)"
+            ><mat-icon>delete</mat-icon></button>
+        </mat-card-actions> 
+    </mat-card>      
+</div>
