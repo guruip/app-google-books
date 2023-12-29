@@ -7,17 +7,5 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  public loading!: boolean;
-  public message = '';
-
-
-  // updateResults(results: BookDetail[]): void {
-  //   this.results = results;
-  //   if (this.results.length === 0) {
-  //     this.message = 'Notfound...';
-  //   } else {
-  //     this.message = 'Top 10results:';
-  //   }
-  // }
  
 }

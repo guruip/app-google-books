@@ -1,6 +1,6 @@
 import { BookDetail } from "./book-detail.model"
 
- export const mockBooks: BookDetail[] = [
+ export const mockBooksData: BookDetail[] = [
     {
       id: "1",
       title: "Ilon Musk",

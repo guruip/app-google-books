@@ -35,4 +35,9 @@ export class SearchBoxComponent {
       }
     );
   }
+
+  ngOnDestroy(): void {
+    
+    
+  }
 }

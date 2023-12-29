@@ -29,7 +29,4 @@ export class BooksCardComponent {
   ngOnInit(): void {
   }
 
-  ngOnDestroy(): void {
-    
-  }
 }
