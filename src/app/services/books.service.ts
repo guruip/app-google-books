@@ -18,6 +18,8 @@ export class BooksService {
   set booksSource(value: BookDetail[]) {
     this.booksSource$.next(value);
   }
+  
+  public result: boolean = false;
 
   private mockBooks: BookDetail[] = mockBooksData;
 

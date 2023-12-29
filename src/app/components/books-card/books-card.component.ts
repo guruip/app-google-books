@@ -12,14 +12,15 @@ export class BooksCardComponent {
   get books$() {
     return this.booksService.booksSource;
   }
-  constructor(private booksService: BooksService) {}
 
+  constructor(private booksService: BooksService) {}
+  
   addFavorite(book: BookDetail): void {
 
     if(!book.isFavorite){
       book.isFavorite = true;
       this.booksService.saveFavorite(book);
-    } else {
+    } else if (this.booksService.result) {
       book.isFavorite = false;
       this.booksService.removeFavorite(book);
       this.booksService.addFavoriteBooks();

@@ -10,7 +10,19 @@ export class HeaderComponent {
 
   constructor(private booksService: BooksService) {}
 
-  addFavorites() {
+  public result: boolean = false;
+
+  public clearFavorites(): void {
+    this.result = false;
+    this.booksService.result = false;
+
+    localStorage.clear();
+    this.booksService.addFavoriteBooks();
+  }
+
+  public addFavorites(): void {
+    this.result = true;
+    this.booksService.result = true;
     this.booksService.addFavoriteBooks();
   }
 }

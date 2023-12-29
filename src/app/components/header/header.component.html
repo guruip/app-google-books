@@ -4,6 +4,7 @@
         <span class="example-spacer"></span>
     </div>
     <div>
+        <button mat-stroked-button *ngIf="result" (click)="clearFavorites()">ClearFavorite</button>
         <button mat-stroked-button (click)="addFavorites()">Favorite</button>
     </div> 
 </mat-toolbar>
