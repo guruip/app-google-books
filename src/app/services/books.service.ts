@@ -49,13 +49,12 @@ export class BooksService {
   };
   
   public saveFavorite(book: BookDetail): void {
-    
+
     if(book.isFavorite) {
       const books = this.getFavorites();
       books.push(book);
 
       const booksJson = JSON.stringify(books);
-      console.log(book);
       localStorage.setItem(this.BOOKS_LOCALSTORAGE_KEY, booksJson);
     }
   };

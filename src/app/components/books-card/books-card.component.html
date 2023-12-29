@@ -5,11 +5,8 @@
               <img class="image" mat-card-image src="{{book.imageUrl}}">
             </a>
         <mat-card-actions>
-            <button class="button" mat-flat-button collor="primary" 
-                type="button" (click)="addFavorite(book)" *ngIf="!book.isFavorite"
-                  ><mat-icon>favorite</mat-icon></button>
-          <button class="button" mat-flat-button collor="primary" mat-button (click)="removeFavorite(book)"
-            ><mat-icon>delete</mat-icon></button>
+          <button mat-fab extended  [style.color]="book.isFavorite? 'red' : 'white'" color="primary"
+              (click)="addFavorite(book)"><mat-icon>favorite</mat-icon>Favorite</button>
         </mat-card-actions> 
     </mat-card>      
 </div>

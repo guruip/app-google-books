@@ -18,6 +18,7 @@ export class BookDetail {
         this.title = book.title ?? '';
         this.detailsUrl = book.detailsUrl ?? '';
         this.imageUrl = book.imageUrl ?? DEFAULT_IMAGE_URL;
+        this.isFavorite = book.hasOwnProperty('isFavorite')  ?? true;
     }
 
     public static fromApi(book: BooksApiResponseItem): BookDetail {

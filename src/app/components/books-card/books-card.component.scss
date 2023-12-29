@@ -14,6 +14,7 @@ mat-card {
 }
 .button {
   margin-right: 5px;
+  color:white;
 }
 .image {
   height: 200px;
@@ -21,4 +22,8 @@ mat-card {
 }
 .example-spacer {
   flex: 1 1 auto;
+}
+
+.color {
+  color:#3f51b5;
 }
