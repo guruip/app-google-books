@@ -7,10 +7,10 @@ import { BooksService } from 'src/app/services/books.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent { 
+  
+  public result: boolean = false;
 
   constructor(private booksService: BooksService) {}
-
-  public result: boolean = false;
 
   public clearFavorites(): void {
     this.result = false;
